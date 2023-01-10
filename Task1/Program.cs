@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            DestructInactive destruct = new DestructInactive();
+
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Тест";
+            string path = @"F:\\СКАНИРОВАНИЕ";
+            destruct.Delete(path);
+
         }
     }
 }
