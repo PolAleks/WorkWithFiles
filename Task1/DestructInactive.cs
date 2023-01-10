@@ -29,7 +29,7 @@ namespace Task1
                         Console.WriteLine($"Последнее обращение к каталогу *{dir.Name}* было " +
                                           $"{(uint)(DateTime.Now - dir.LastAccessTime).TotalMinutes} " +
                                           $"минут назад - папка будет удалена!");
-                        //dir.Delete(true);
+                        dir.Delete(true);
                     }
                 }
             }
