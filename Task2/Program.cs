@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            
+            string path = @"F:\ЭО\ДОКУМЕНТЫ";
+
             long size = GetTotalSpace(path);
 
             Console.WriteLine($"{size / 1048576} МБ ({size}) байт");
