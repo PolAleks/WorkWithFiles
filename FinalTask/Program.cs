@@ -6,15 +6,11 @@ namespace FinalTask
     {
         static void Main(string[] args)
         {
+            string pathSourseFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Students.dat");
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string pathSourseFile = Path.Combine(path, @"Students.dat");
-
-            
             ListStudents students = new ListStudents(pathSourseFile);
 
             students.Save();
-
         }
         
     }

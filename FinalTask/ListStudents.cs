@@ -15,13 +15,13 @@ namespace FinalTask
 
         private string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-        private const string DESTINATION_FOLDER = @"\Students\";
+        private const string DESTINATION_FOLDER = "Students";
 
         private List<string> group = new List<string>();
         public ListStudents(string path)
         {
             if (String.IsNullOrEmpty(path))
-                path = desktopPath + @"Students.data";
+                path = Path.Combine(desktopPath, "Students.data");
 
             if (File.Exists(path))
             {
@@ -82,18 +82,18 @@ namespace FinalTask
         {
             if(isCorectInstantiation)
             {
-                desktopPath += DESTINATION_FOLDER;
+                desktopPath = Path.Combine(desktopPath, DESTINATION_FOLDER);
 
                 if (!Directory.Exists(desktopPath))
                     Directory.CreateDirectory(desktopPath); //Создаем директорию для файлов если её нет
 
                 foreach (var gr in group)
                 {
-                    string fileName = desktopPath + gr + ".txt"; //Полное имя файла включающее название группы
+                    string fileName = Path.Combine(desktopPath, $"{gr}.txt"); //Полное имя файла включающее название группы
 
                     using (StreamWriter sw = File.CreateText(fileName))
                     {
-                        string studentFromGroup = "";
+                        string studentFromGroup = String.Empty;
                         foreach (var student in students)
                         {
                             if (gr == student.Group)

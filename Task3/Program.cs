@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Тест";
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),"Тест");
 
             WorkWithDirectory workDir = new WorkWithDirectory(path);
 

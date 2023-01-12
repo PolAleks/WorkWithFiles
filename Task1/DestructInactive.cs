@@ -9,7 +9,7 @@ namespace Task1
 {
     internal class DestructInactive
     {
-        private string Path { get; set; }
+        private string Path { get; set; } = String.Empty;
         
         private DirectoryInfo directory;
         
